@@ -1,0 +1,13 @@
+FROM centos:6.6
+
+MAINTAINER 10sr <8slashes+docker@gmail.com>
+
+RUN yum install -y "@Development Tools"
+
+RUN cd /tmp && \
+    curl -sSL -O https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz && \
+    tar -xf Python-2.7.13.tgz && \
+    cd Python-2.7.13 && ./configure --prefix=/usr/local/bin && make && make install && \
+    cd /tmp && rm -fr Python-2.7.13 && rm -f Python-2.7.13.tgz
+
+RUN yum uninstall -y "@Development Tools"
