@@ -9,5 +9,3 @@ RUN cd /tmp && \
     tar -xf Python-2.7.13.tgz && \
     cd Python-2.7.13 && ./configure --prefix=/usr/local/bin && make && make install && \
     cd /tmp && rm -fr Python-2.7.13 && rm -f Python-2.7.13.tgz
-
-RUN yum remove -y "@Development Tools"
