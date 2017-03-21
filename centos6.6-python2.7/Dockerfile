@@ -2,7 +2,7 @@ FROM centos:6.6
 
 MAINTAINER 10sr <8slashes+docker@gmail.com>
 
-RUN yum install -y "@Development Tools"
+RUN yum install -y tar "@Development Tools"
 
 RUN cd /tmp && \
     curl -sSL -O https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz && \
