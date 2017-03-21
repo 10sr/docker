@@ -2,12 +2,12 @@ FROM centos:6.6
 
 MAINTAINER 10sr <8slashes+docker@gmail.com>
 
-RUN yum install -y tar "@Development Tools"
+RUN yum install -y tar zlib "@Development Tools"
 
 RUN cd /tmp && \
     curl -sSL -O https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz && \
     tar -xf Python-2.7.13.tgz && \
-    cd Python-2.7.13 && ./configure --prefix=/usr/local && make && make install && \
+    cd Python-2.7.13 && ./configure --prefix=/usr/local --with-zlib-dir=/usr/local/lib && make && make install && \
     cd /tmp && rm -fr Python-2.7.13 && rm -f Python-2.7.13.tgz
 
 RUN /usr/local/bin/python2.7 -m ensurepip
