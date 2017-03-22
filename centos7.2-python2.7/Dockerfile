@@ -1,4 +1,4 @@
-FROM centos:7.2
+FROM centos:7.2.1511
 
 MAINTAINER 10sr <8slashes+docker@gmail.com>
 
