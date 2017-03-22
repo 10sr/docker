@@ -2,7 +2,8 @@ FROM centos:6.6
 
 MAINTAINER 10sr <8slashes+docker@gmail.com>
 
-RUN yum install -y tar zlib-devel "@Development Tools"
+RUN yum install -y tar \
+    bzip2-devel ncurses-devel sqlite-devel readline-devel tk-devel openssl-devel zlib-devel "@Development Tools"
 
 RUN cd /tmp && \
     curl -sSL -O https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz && \
